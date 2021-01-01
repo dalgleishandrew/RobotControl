@@ -47,16 +47,14 @@ let RightBack = 0
 let LeftBack = 0
 let RightForward = 0
 let LeftForward = 0
-let RightSpin = 0
-let LeftSpin = 0
 let RightStop = 0
 let LeftStop = 0
+let RightSpin = 0
+let LeftSpin = 0
 let BrightLights: neopixel.Strip = null
 radio.setGroup(1)
 BrightLights = neopixel.create(DigitalPin.P0, 5, NeoPixelMode.RGB)
 BrightLights.setBrightness(200)
-pins.servoWritePin(AnalogPin.P2, LeftStop)
-pins.servoWritePin(AnalogPin.P1, RightStop)
 LeftSpin = 180
 RightSpin = 180
 LeftStop = 90
@@ -65,3 +63,5 @@ LeftForward = 180
 RightForward = 0
 LeftBack = 0
 RightBack = 180
+pins.servoWritePin(AnalogPin.P2, LeftStop)
+pins.servoWritePin(AnalogPin.P1, RightStop)
