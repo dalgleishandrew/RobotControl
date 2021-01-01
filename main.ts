@@ -12,20 +12,13 @@ radio.onReceivedString(function (receivedString) {
         pins.servoWritePin(AnalogPin.P2, LeftSpin)
         pins.servoWritePin(AnalogPin.P1, RightSpin)
         BrightLights.showRainbow(1, 360)
-        basic.showLeds(`
-            . . # . .
-            . # . # .
-            # . . . #
-            . # . # .
-            . . # . .
-            `)
     }
     if (receivedString == "Stop") {
         pins.servoWritePin(AnalogPin.P2, RightStop)
         pins.servoWritePin(AnalogPin.P1, LeftStop)
+        basic.showNumber(CommandSpeed)
         BrightLights.clear()
         BrightLights.show()
-        basic.clearScreen()
     }
     if (receivedString == "Back") {
         pins.servoWritePin(AnalogPin.P2, 180 - CommandSpeed)
@@ -47,5 +40,6 @@ LeftSpin = 180
 RightSpin = 180
 LeftStop = 90
 RightStop = 90
+CommandSpeed = 180
 pins.servoWritePin(AnalogPin.P2, LeftStop)
 pins.servoWritePin(AnalogPin.P1, RightStop)
